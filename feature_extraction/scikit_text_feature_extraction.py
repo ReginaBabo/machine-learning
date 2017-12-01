@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import HashingVectorizer
 
-def vectorize_using_scikit_learn(texts, val_texts):
+def vectorize_using_scikit_learn(texts):
     vectorizer = CountVectorizer(binary=True, ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace')
     x_train = vectorizer.fit_transform(texts)
 
@@ -55,8 +55,7 @@ def vectorize_using_scikit_learn(texts, val_texts):
 
 
 if __name__ == '__main__':
-    train_data = ['John likes to watch movies. Mary likes movies too.',
+    data = ['John likes to watch movies. Mary likes movies too.',
             'John also likes to watch football games.']
-    test_data = ['John and Mary both like movies.']
 
-    vectorize_using_scikit_learn(train_data, test_data)
+    vectorize_using_scikit_learn(data)

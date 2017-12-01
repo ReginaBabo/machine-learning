@@ -1,7 +1,7 @@
 import keras
 from keras.preprocessing import text
 
-def vectorize_using_keras(texts, val_texts):
+def vectorize_using_keras(texts):
     # word tokens
     num_words = 25
     tokenizer = text.Tokenizer(num_words=num_words) 
@@ -63,8 +63,7 @@ def vectorize_using_keras(texts, val_texts):
     print hashing_trick_response
 
 if __name__ == '__main__':
-    train_data = ['John likes to watch movies. Mary likes movies too.',
+    data = ['John likes to watch movies. Mary likes movies too.',
             'John also likes to watch football games.']
-    test_data = ['John and Mary both like movies.']
 
-    vectorize_using_keras(train_data, test_data)
+    vectorize_using_keras(data)

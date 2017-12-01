@@ -1,3 +1,5 @@
+data = ['John'] ngram_range = (1,2)
+
 Vocabulary word
 {u'john': 0}
 CountVectorizer binary word
@@ -30,8 +32,16 @@ HashingVectorizer
   (0, 20)	-1.0
 
 
+data = ['John likes to watch movies. Mary likes movies too.',
+            'John also likes to watch football games.'] ngram_range = (1,2)
+
+
 Vocabulary word
-{u'watch football': 20, u'likes movies': 9, u'to watch': 17, u'movies mary': 14, u'watch movies': 21, u'mary likes': 12, u'watch': 19, u'football': 2, u'also likes': 1, u'likes': 8, u'movies': 13, u'john likes': 7, u'football games': 3, u'also': 0, u'likes to': 10, u'john also': 6, u'to': 16, u'games': 4, u'too': 18, u'john': 5, u'mary': 11, u'movies too': 15}
+{u'watch football': 20, u'likes movies': 9, u'to watch': 17,
+u'movies mary': 14, u'watch movies': 21, u'mary likes': 12, u'watch': 19,
+u'football': 2, u'also likes': 1, u'likes': 8, u'movies': 13, u'john likes': 7,
+u'football games': 3, u'also': 0, u'likes to': 10, u'john also': 6, u'to': 16,
+ u'games': 4, u'too': 18, u'john': 5, u'mary': 11, u'movies too': 15}
 CountVectorizer binary word
   (0, 5)	1
   (0, 7)	1
@@ -49,7 +59,11 @@ CountVectorizer binary word
   (0, 19)	1
   (0, 21)	1
 Vocabulary char
-{u'watch football': 20, u'likes movies': 9, u'to watch': 17, u'movies mary': 14, u'watch movies': 21, u'mary likes': 12, u'watch': 19, u'football': 2, u'also likes': 1, u'likes': 8, u'movies': 13, u'john likes': 7, u'football games': 3, u'also': 0, u'likes to': 10, u'john also': 6, u'to': 16, u'games': 4, u'too': 18, u'john': 5, u'mary': 11, u'movies too': 15}
+{u'watch football': 20, u'likes movies': 9, u'to watch': 17,
+u'movies mary': 14, u'watch movies': 21, u'mary likes': 12, u'watch': 19,
+u'football': 2, u'also likes': 1, u'likes': 8, u'movies': 13, u'john likes': 7,
+u'football games': 3, u'also': 0, u'likes to': 10, u'john also': 6, u'to': 16,
+u'games': 4, u'too': 18, u'john': 5, u'mary': 11, u'movies too': 15}
 Transforming text
 John likes to watch movies. Mary likes movies too.
 CountVectorizer count
@@ -96,3 +110,49 @@ HashingVectorizer
   (0, 20)	-0.333333333333
   (0, 23)	0.333333333333
   (0, 24)	-0.333333333333
+
+
+data = ['John likes to watch movies. Mary likes movies too.',
+            'John also likes to watch football games.'] ngram_range = (1,1)
+
+
+Vocabulary word
+{u'to': 7, u'movies': 6, u'football': 1, u'watch': 9, u'also': 0, u'games': 2,
+u'likes': 4, u'john': 3, u'mary': 5, u'too': 8}
+CountVectorizer binary word
+  (0, 3)	1
+  (0, 4)	1
+  (0, 5)	1
+  (0, 6)	1
+  (0, 7)	1
+  (0, 8)	1
+  (0, 9)	1
+Vocabulary char
+{u'to': 7, u'movies': 6, u'football': 1, u'watch': 9, u'also': 0, u'games': 2,
+u'likes': 4, u'john': 3, u'mary': 5, u'too': 8}
+Transforming text
+John likes to watch movies. Mary likes movies too.
+CountVectorizer count
+  (0, 3)	1
+  (0, 4)	2
+  (0, 5)	1
+  (0, 6)	2
+  (0, 7)	1
+  (0, 8)	1
+  (0, 9)	1
+TfidfVectorizer
+  (0, 9)	0.230314544534
+  (0, 8)	0.323699056232
+  (0, 7)	0.230314544534
+  (0, 6)	0.647398112464
+  (0, 5)	0.323699056232
+  (0, 4)	0.460629089068
+  (0, 3)	0.230314544534
+HashingVectorizer
+  (0, 1)	-0.277350098113
+  (0, 2)	0.277350098113
+  (0, 5)	-0.554700196225
+  (0, 16)	0.277350098113
+  (0, 18)	0.554700196225
+  (0, 20)	-0.277350098113
+  (0, 23)	0.277350098113

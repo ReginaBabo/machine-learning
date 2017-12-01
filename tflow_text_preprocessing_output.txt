@@ -1,0 +1,35 @@
+Word id mapping
+{'John': 1, '<UNK>': 0}
+Vocabulary processor transformed text
+[array([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])]
+Total words:
+2
+Tokenizer
+[['John']]
+Byte processor
+[array([ 74, 111, 104, 110,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0], dtype=uint8)]
+Vocabulary processor transformed text
+[array([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])]
+Existing vocabulary processor
+[array([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])]
+
+Word id mapping
+{'also': 8, 'too': 7, 'movies': 5, 'football': 9, 'watch': 4, 'to': 3, 'games': 10, 'likes': 2, 'John': 1, 'Mary': 6, '<UNK>': 0}
+Vocabulary processor transformed text
+[array([1, 2, 3, 4, 5, 6, 2, 5, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), array([ 1,  8,  2,  3,  4,  9, 10,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+        0,  0,  0])]
+Total words:
+11
+Tokenizer
+[['John', 'likes', 'to', 'watch', 'movies', 'Mary', 'likes', 'movies', 'too'], ['John', 'also', 'likes', 'to', 'watch', 'football', 'games']]
+Byte processor
+[array([ 74, 111, 104, 110,  32, 108, 105, 107, 101, 115,  32, 116, 111,
+        32, 119,  97, 116,  99, 104,  32], dtype=uint8), array([ 74, 111, 104, 110,  32,  97, 108, 115, 111,  32, 108, 105, 107,
+       101, 115,  32, 116, 111,  32, 119], dtype=uint8)]
+Vocabulary processor transformed text
+[array([1, 2, 3, 4, 5, 6, 2, 5, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), array([ 1,  8,  2,  3,  4,  9, 10,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+        0,  0,  0])]
+Existing vocabulary processor
+[array([1, 2, 3, 4, 5, 6, 2, 5, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), array([ 1,  8,  2,  3,  4,  9, 10,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+        0,  0,  0])]

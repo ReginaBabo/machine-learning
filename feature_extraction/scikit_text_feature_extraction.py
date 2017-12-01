@@ -6,7 +6,8 @@ from sklearn.feature_extraction.text import HashingVectorizer
 
 def vectorize_using_scikit_learn(texts):
     vectorizer = CountVectorizer(binary=True, ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace')
-    x_train = vectorizer.fit_transform(texts)
+    vectorizer.fit(texts)
+    x_train = vectorizer.transform([texts[0]])
 
     print 'Vocabulary word'
     print vectorizer.vocabulary_
@@ -14,44 +15,54 @@ def vectorize_using_scikit_learn(texts):
     print 'CountVectorizer binary word'
     print x_train
 
-    vectorizer = CountVectorizer(binary=True, ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace', analyzer='char')
-    x_train = vectorizer.fit_transform(texts)
+    # vectorizer = CountVectorizer(binary=True, ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace', analyzer='char')
+    # vectorizer.fit(texts)
+    # x_train = vectorizer.transform([texts[0]])
 
     print 'Vocabulary char'
     print vectorizer.vocabulary_
 
-    print 'CountVectorizer binary char'
-    print x_train
+    print 'Transforming text'
+    print texts[0]
+
+    # print 'CountVectorizer binary char'
+    # print x_train
 
     print 'CountVectorizer count'
     vectorizer = CountVectorizer(ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace')
-    x_train = vectorizer.fit_transform(texts)
+    vectorizer.fit(texts)
+    x_train = vectorizer.transform([texts[0]])
     print x_train
 
-    print 'CountVectorizer count char'
-    vectorizer = CountVectorizer(ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace', analyzer='char')
-    x_train = vectorizer.fit_transform(texts)
-    print x_train
+    # print 'CountVectorizer count char'
+    # vectorizer = CountVectorizer(ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace', analyzer='char')
+    # vectorizer.fit(texts)
+    # x_train = vectorizer.transform([texts[0]])
+    # print x_train
 
     print 'TfidfVectorizer'
     vectorizer = TfidfVectorizer(ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace')
-    x_train = vectorizer.fit_transform(texts)
+    vectorizer.fit(texts)
+    x_train = vectorizer.transform([texts[0]])
     print x_train
 
-    print 'TfidfVectorizer char'
-    vectorizer = TfidfVectorizer(ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace', analyzer='char')
-    x_train = vectorizer.fit_transform(texts)
-    print x_train
+    # print 'TfidfVectorizer char'
+    # vectorizer = TfidfVectorizer(ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace', analyzer='char')
+    # vectorizer.fit(texts)
+    # x_train = vectorizer.transform([texts[0]])
+    # print x_train
 
     print 'HashingVectorizer'
     vectorizer = HashingVectorizer(ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace', n_features=25)
-    x_train = vectorizer.fit_transform(texts)
+    vectorizer.fit(texts)
+    x_train = vectorizer.transform([texts[0]])
     print x_train
 
-    print 'HashingVectorizer char'
-    vectorizer = HashingVectorizer(ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace', analyzer='char', n_features=25)
-    x_train = vectorizer.fit_transform(texts)
-    print x_train
+    # print 'HashingVectorizer char'
+    # vectorizer = HashingVectorizer(ngram_range=(1, 2), dtype='int32', strip_accents='unicode', decode_error='replace', analyzer='char', n_features=25)
+    # vectorizer.fit(texts)
+    # x_train = vectorizer.transform([texts[0]])
+    # print x_train
 
 
 if __name__ == '__main__':

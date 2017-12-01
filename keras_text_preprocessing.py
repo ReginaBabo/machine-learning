@@ -4,7 +4,8 @@ from keras.preprocessing import text
 def vectorize_using_keras(texts, val_texts):
     # word tokens
     num_words = 25
-    tokenizer = text.Tokenizer(num_words=num_words)
+    tokenizer = text.Tokenizer(num_words=num_words) 
+    # Skipped the char_level setting
     tokenizer.fit_on_texts(texts)
 
     print 'Document count'
